@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Trang chủ on Jackie Nguyen</title>
+    <link>/vi/</link>
+    <description>Recent content in Trang chủ on Jackie Nguyen</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 18 Feb 2018 22:34:04 +0100</lastBuildDate><atom:link href="/vi/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>/vi/sections/simple-values/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/vi/sections/simple-values/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>/vi/sections/simple-choices/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/vi/sections/simple-choices/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>/vi/sections/simple-people/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/vi/sections/simple-people/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Giới thiệu</title>
+      <link>/vi/gioi-thieu/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/vi/gioi-thieu/</guid>
+      <description>Đây là bản giới thiệu.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>/vi/sections/simple/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/vi/sections/simple/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Compiler là gì ?</title>
+      <link>/vi/posts/makefile-tutorial/compiler/</link>
+      <pubDate>Sun, 18 Feb 2018 22:34:04 +0100</pubDate>
+      
+      <guid>/vi/posts/makefile-tutorial/compiler/</guid>
+      <description>Compiler là gì ? Cross Compiler là gì ? Nó có liên quan gì tới một hệ thống nhúng ? Mình cùng tìm hiểu một số khái niệm cơ bản trong bài này nhé.
+Compiler Compiler hay còn gọi là trình biên dịch có thể được hiểu là công việc dịch chuỗi câu lệnh được viết từ một ngôn ngữ lập trình thành chương trình tương đương dưới dạng ngôn ngữ máy tính, thường là ngôn ngữ ở cấp thấp hơn, ngôn ngữ máy.</description>
+    </item>
+    
+  </channel>
+</rss>

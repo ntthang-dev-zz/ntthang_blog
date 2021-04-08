@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="vi"><head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="robots" content="index, follow" />
+	<meta name="googlebot" content="index, follow, noarchive" />
+	<title>Jackie Nguyen - Compiler là gì ?</title>
+	<link rel="icon" href="/favicon.ico" />
+	<meta name="description" content="Anh sẽ biến cái phần mềm đó thành phần cứng vì em." />
+
+	
+
+	<meta name="generator" content="Hugo 0.82.0" />
+
+	
+
+	<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Compiler là gì ?"/>
+<meta name="twitter:description" content="Compiler là gì ? Cross Compiler là gì ? Nó có liên quan gì tới một hệ thống nhúng ? Mình cùng tìm hiểu một số khái niệm cơ bản trong bài này nhé.
+Compiler Compiler hay còn gọi là trình biên dịch có thể được hiểu là công việc dịch chuỗi câu lệnh được viết từ một ngôn ngữ lập trình thành chương trình tương đương dưới dạng ngôn ngữ máy tính, thường là ngôn ngữ ở cấp thấp hơn, ngôn ngữ máy."/>
+
+	<meta property="og:title" content="Compiler là gì ?" />
+<meta property="og:description" content="Compiler là gì ? Cross Compiler là gì ? Nó có liên quan gì tới một hệ thống nhúng ? Mình cùng tìm hiểu một số khái niệm cơ bản trong bài này nhé.
+Compiler Compiler hay còn gọi là trình biên dịch có thể được hiểu là công việc dịch chuỗi câu lệnh được viết từ một ngôn ngữ lập trình thành chương trình tương đương dưới dạng ngôn ngữ máy tính, thường là ngôn ngữ ở cấp thấp hơn, ngôn ngữ máy." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/vi/posts/makefile-tutorial/compiler/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2018-02-18T22:21:42&#43;01:00" />
+<meta property="article:modified_time" content="2018-02-18T22:34:04&#43;01:00" /><meta property="og:site_name" content="Jackie Nguyen" />
+
+
+
+	<meta property="og:locale" content="vi" />
+	
+
+	
+	
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/bundle.min.css">
+</head>
+<body><header class="header  has-LangNav">
+    <div class="header__title">
+        <a href="/vi" class="header__title__link" alt="Home">
+            
+            Jackie Nguyen
+            
+        </a>
+    </div>
+
+    <nav class="menu" aria-label="menu">
+    <ul class="menu__items" aria-label="menu">
+        
+        
+        <li class="menu__items__item" aria-label="Trang chủ">
+            <a href="/vi/" class="menu__items__item__link "
+                alt="Trang chủ" role="menuitem">
+                Trang chủ
+            </a>
+        </li>
+        
+        <li class="menu__items__item" aria-label="Blog">
+            <a href="/vi/blog/" class="menu__items__item__link "
+                alt="Blog" role="menuitem">
+                Blog
+            </a>
+        </li>
+        
+        <li class="menu__items__item" aria-label="Giới thiệu">
+            <a href="/vi/gioi-thieu/" class="menu__items__item__link "
+                alt="Giới thiệu" role="menuitem">
+                Giới thiệu
+            </a>
+        </li>
+        
+        <li class="menu__items__item" aria-label="Liên hệ">
+            <a href="/vi/lien-he/" class="menu__items__item__link "
+                alt="Liên hệ" role="menuitem">
+                Liên hệ
+            </a>
+        </li>
+        
+    </ul>
+</nav>
+    <nav class="hamburger-menu" aria-label="mobile-menu">
+    <div class="toggle">
+        <input type="checkbox" class="hamburger__toggle" id="hamburgerToggle" name="hamburger toggle" aria-label="Hamburguer menu">
+        <label class="hamburger__toggle__icon" for="hamburgerToggle">
+            <i class="fas fa-bars"></i>
+        </label>
+
+        <ul class="hamburger__items" aria-label="mobile-menu">
+            
+            <li class="hamburger__items__item" aria-label="Trang chủ">
+                <a href="/vi/" class="hamburger__items__item__link" alt="Trang chủ" role="menuitem">
+                    Trang chủ
+                </a>
+            </li>
+            
+            <li class="hamburger__items__item" aria-label="Blog">
+                <a href="/vi/blog/" class="hamburger__items__item__link" alt="Blog" role="menuitem">
+                    Blog
+                </a>
+            </li>
+            
+            <li class="hamburger__items__item" aria-label="Giới thiệu">
+                <a href="/vi/gioi-thieu/" class="hamburger__items__item__link" alt="Giới thiệu" role="menuitem">
+                    Giới thiệu
+                </a>
+            </li>
+            
+            <li class="hamburger__items__item" aria-label="Liên hệ">
+                <a href="/vi/lien-he/" class="hamburger__items__item__link" alt="Liên hệ" role="menuitem">
+                    Liên hệ
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</nav>
+    
+    <nav class="LangNav">
+
+
+    
+            
+                <span class="active language">vi</span>
+            
+</nav>
+
+    
+</header>
+
+<article class="post">
+    <header class="post__header">
+        <h1 class="post__title">Compiler là gì ?</h1>
+        
+        
+        
+        <p class="post__date date">
+            Sunday, Feb, 2018 By Jackie Nguyen.
+        </p>
+        
+        
+    </header>
+
+    
+    <main class="post__body">
+        <p><a href="#">Compiler là gì ? Cross Compiler là gì ? Nó có liên quan gì tới một hệ thống nhúng ?</a> Mình cùng tìm hiểu một số khái niệm cơ bản trong bài này nhé.</p>
+<h2 id="compiler">Compiler</h2>
+<p>Compiler hay còn gọi là <a href="https://vi.wikipedia.org/wiki/Tr%C3%ACnh_bi%C3%AAn_d%E1%BB%8Bch">trình biên dịch</a> có thể được hiểu là công việc dịch chuỗi câu lệnh được viết từ một ngôn ngữ lập trình thành chương trình tương đương dưới dạng ngôn ngữ máy tính, thường là ngôn ngữ ở cấp thấp hơn, ngôn ngữ máy. Đơn giản dễ hiểu thì có thể tạm nói là nhờ Complier này mà <code>file .c</code> chúng ta viết mới được dịch thành file <code>.hex</code> <code>.bin</code> để nạp được xuống một MCU bất kỳ.</p>
+<h3 id="quá-trình-biên-dịch">Quá trình biên dịch</h3>
+<p><img src="https://hocarm.org/content/images/2020/04/compiler_gcc.gif" alt="Compiler GCC."></p>
+<p>Chúng ta có thể xem sơ đồ chi tiết các bước từ Code/Build/Run ở hình sau</p>
+<p><img src="https://hocarm.org/content/images/2020/04/excuting_a_program.png" alt="excuting a program"></p>
+<p>Thông thường nếu dùng chương trình để lập trình như Keil C chẳng hạn thì chỉ cần ấn một nút Build/Run xong là chúng ta chỉ việc ngồi chờ và chương trình được nạp trực tiếp vào chip luôn, nhưng ẩn đằng sau những nút này là một loạt hoạt động theo các bước như hình trên.</p>
+<h2 id="cross-compiler-toolchain-là-gì-">Cross Compiler/ Toolchain là gì ?</h2>
+<p><a href="https://en.wikipedia.org/wiki/Cross_compiler">Cross Compiler</a> hay còn gọi là Toolchain có thể được hiểu là một source code được viết trên máy tính chạy trên chip Intel, sau khi thông qua một cross compiler sẽ cho ra file nhị phân có khả năng chạy được trên một nền tảng chip khác là ARM. Một ví dụ cơ bản nhất là mình đã dùng một máy tính hệ điều hành Ubuntu để build ra một file image có thể chạy trên Raspberry Pi</p>
+<p><img src="https://hocarm.org/content/images/2020/04/Example_of_Cross_compiler.png" alt="Cross compiler"></p>
+<p>Quá trình tạo ra và sử dụng <code>cross compiler</code>/ <code>tool chain</code> có liên quan tới 3 đối tượng :</p>
+<ul>
+<li><strong>Build</strong> : hệ thống tạo ra <code>tool chain</code>, thường là các máy tính các máy tính dùng chip Intel và hệ điều hành Linux hoặc Windows.</li>
+<li><strong>Host</strong> : hệ thống chạy <code>tool chain</code> để compile source code, host cũng giống build thường là các máy tính dùng chip Intel và Windows hoặc Linux là hệ điều hành.</li>
+<li><strong>Target</strong> : là hệ thống chạy chương trình do host tạo ra, thường target là các máy tính nhúng dùng chip ARM, tuy nhiên nó cũng có thể là một máy tính bình thường dùng chip Intel.</li>
+</ul>
+<p><img src="https://hocarm.org/content/images/2020/04/gcc-cross-compiler.png" alt="GCC Cross compiler"></p>
+<p>Vậy các thành phần của Cross Compiler là gì ?</p>
+<p><img src="https://hocarm.org/content/images/2020/04/component_toolchain-e1489290193482.jpg" alt="Component toolchain"></p>
+<ul>
+<li><strong>Binutils</strong> : Là một tập các công cụ để tạo và quản lý file nhị phân <code>(bin)</code> của target CPU</li>
+<li><code>as</code> : là <code>assembler</code>, nó sinh ra mã nhị phân <code>(binary code)</code> từ <code>assembler</code> source code</li>
+<li><code>ld</code> : trình liên kết <code>(linker)</code></li>
+<li><code>ar, ranlib</code> : sinh ra file nén <code>.a</code>, sử dụng như là thư viện</li>
+<li><code>objdump, readelf, size, nm, strings</code>: phân tích file nhị phân</li>
+<li><code>strip</code> : để loại bỏ những phần thừa trong file nhị phân để giảm kích thước của chúng</li>
+</ul>
+<p>Thông thường để cross-compiler một chương trình ta phải cài đặt biến môi trường mới có thể compile đúng được
+Ví dụ</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ export PATH<span style="color:#f92672">=</span>/path/to/compiler/bin:$PATH
+$ export CROSS_COMPILE<span style="color:#f92672">=</span>arm-none-linux-gnueabi- 
+$ export CC<span style="color:#f92672">=</span><span style="color:#e6db74">${</span>CROSS_COMPILE<span style="color:#e6db74">}</span>gcc 
+$ export CXX<span style="color:#f92672">=</span><span style="color:#e6db74">${</span>CROSS_COMPILE<span style="color:#e6db74">}</span>g++ 
+$ export CPP<span style="color:#f92672">=</span><span style="color:#e6db74">${</span>CROSS_COMPILE<span style="color:#e6db74">}</span>cpp 
+$ export AR<span style="color:#f92672">=</span><span style="color:#e6db74">${</span>CROSS_COMPILE<span style="color:#e6db74">}</span>ar 
+$ export AS<span style="color:#f92672">=</span><span style="color:#e6db74">${</span>CROSS_COMPILE<span style="color:#e6db74">}</span>as 
+$ export LD<span style="color:#f92672">=</span><span style="color:#e6db74">${</span>CROSS_COMPILE<span style="color:#e6db74">}</span>ld 
+$ export RANLIB<span style="color:#f92672">=</span><span style="color:#e6db74">${</span>CROSS_COMPILE<span style="color:#e6db74">}</span>ranlib 
+$ export STRIP<span style="color:#f92672">=</span><span style="color:#e6db74">${</span>CROSS_COMPILE<span style="color:#e6db74">}</span>strip 
+</code></pre></div><h3 id="cc-library">C/C++ Library</h3>
+<p>Library được dùng làm interface giữa applications và kernel, cung cấp các C API chuẩn để dễ dàng phát triển ứng dụng. Một số <code>libb</code> có thể kể đến như: <code>glibc, uClibc, eglibc, dietlibc, newlib, …</code></p>
+<p><img src="https://hocarm.org/content/images/2020/04/c-lib.png" alt="c-lib"></p>
+<h3 id="kernel-header">Kernel header</h3>
+<p>Cung cấp các API cần thiết cho Applications và C Library giao tiếp với Kernel.</p>
+<p><img src="https://hocarm.org/content/images/2020/04/kernel-header.png" alt="kernel-header"></p>
+<h3 id="gcc-compiler">GCC compiler</h3>
+<p><code>gcc</code>, <code>c++</code>, <code>g++</code> : compiler
+Trình biên dịch trong hệ thống Linux, compile cho rất nhiều ngôn ngữ và nhiều kiến trúc CPU khác nhau như ARM, MIPS, PowerPC, SuperH, x86; tuy nhiên mình chỉ đề cập đến ngôn ngữ C/C++ và kiến trúc CPU là ARM và x86.</p>
+<h3 id="gdb-debugger">GDB Debugger</h3>
+<p>Trình gỡ rối, trợ giúp cho quá trình phát hiện lỗi khi develop application.</p>
+<h2 id="ví-dụ-với-gcc-compiler">Ví dụ với GCC Compiler</h2>
+<h3 id="cài-đặt-gcc">Cài đặt GCC</h3>
+<p>Trước hết, mình thực hiện các bước với GCC trên máy tính dùng <strong>Ubuntu</strong> nhé</p>
+<p>Thực hiện check version hiện có của <code>gcc/g++</code> và cài đặt</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ gcc --version
+$ g++ --version
+$ sudo apt-get install gcc g++
+</code></pre></div><h3 id="ví-dụ">Ví dụ</h3>
+<p>Xét một ví dụ cơ bản với chương trình C tính căn bậc 2 của 4 như sau</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;  </span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;math.h&gt;  </span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>   
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(<span style="color:#66d9ef">int</span> argc, <span style="color:#66d9ef">char</span> <span style="color:#f92672">**</span>argv) {      
+      <span style="color:#66d9ef">double</span> x;     
+      x <span style="color:#f92672">=</span> sqrt(<span style="color:#ae81ff">4</span>);  
+      printf(<span style="color:#e6db74">&#34;x = %f </span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, x);  
+      <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>;  
+} 
+</code></pre></div><p>Để thực hiện thì chúng ta lưu code trên dưới dạng file là <code>main.c</code>, sau đó thực hiện gõ lệnh command sau trên ubuntu</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ export CFLAGS<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;-I./include -DDEBUG -Wall -g&#34;</span> 
+$ export LDFLAGS<span style="color:#f92672">+=</span><span style="color:#e6db74">&#34; -L./lib -lm&#34;</span>  
+$ gcc -c main.c <span style="color:#e6db74">${</span>CFLAGS<span style="color:#e6db74">}</span>         <span style="color:#75715e">#tạo file object từ source </span>
+$ gcc -o prog main.o  <span style="color:#e6db74">${</span>LDFLAGS<span style="color:#e6db74">}</span>  <span style="color:#75715e">#tạo file chương trình nhị phân từ file object </span>
+$ ./prog   <span style="color:#75715e">#chạy chương trình</span>
+</code></pre></div><h3 id="giải-thích">Giải thích</h3>
+<p>Trên đây là một format cơ bản nhất của GCC</p>
+<p><strong><code>CFLAGS</code></strong></p>
+<p>C compiler flags đưa các options vào trong compiler để thực hiện quá trình compile source code thành object sẽ bao gồm các thông tin :</p>
+<ul>
+<li>Đường dẫn các header bắt đầu với <code>-I</code>, ví dụ <code>-I./include</code> .</li>
+<li>Các define được bắt đầu với <code>-D</code>, ví dụ <code>DDEBUG</code> để define DEBUG .</li>
+<li>Các option đặc biệt khác của compiler như <code>-g</code> để bật chức năng <code>debug gdb</code> của <code>gcc compiler</code>, <code>-wall</code> để trace các cảnh báo (warning) trong quá trình C.</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ export CFLAGS<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;-I./include --DDEBUG -Wall -g&#34;</span><span style="color:#e6db74">`</span>
+</code></pre></div><p><strong><code>LDFLAGS</code></strong></p>
+<p>Linker flags dùng trong quá trình linking các thư viện, nó bao gồm các thông tin:</p>
+<ul>
+<li>Đường dẫn tới thư viện, được bắt đầu bằng <code>-L</code>, ví dụ <code>-L./lib</code> .</li>
+<li>Các thư viện bắt đầu với <code>-l</code> là viết tắt của <code>lib</code>, ví dụ <code>-lm</code> tương ứng với <code>libm</code>, thư viện math có sẵn trong hệ thống.</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ export LDFLAGS<span style="color:#f92672">+=</span><span style="color:#e6db74">&#34; -L./lib -lm&#34;</span>
+</code></pre></div><p><strong><code>gcc</code></strong> Compiler cho C source và <strong><code>g++</code></strong> cho C++ source.</p>
+<h2 id="tạm-kết">Tạm kết</h2>
+<p>Thế là xong được những bước cơ bản đầu tiên với Crosscompiler, tìm hiểu được một chút về cách để compile source .c đơn giản. Mới bước đầu làm quen thế là đủ, hẹn mọi người ở bài tiếp theo.</p>
+
+    </main>
+    
+
+    
+    <footer class="post__footer">
+        
+<ul class="tags">
+    
+    
+    <li class="tags__tag">
+        <a href="/tags/makefile/" class="tag__link" alt="makefile.">
+            #makefile
+        </a>
+    </li>
+    
+    
+    <li class="tags__tag">
+        <a href="/tags/compiler/" class="tag__link" alt="compiler.">
+            #compiler
+        </a>
+    </li>
+    
+</ul>
+
+
+    </footer>
+    
+</article>
+<footer class="footer">
+    
+    
+    
+
+    
+    <div class="footer__social">
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <a href="https://github.com/ntthang-dev" class="footer__social__link" alt="github" target="_blank" aria-label="https://github.com/ntthang-dev" rel="noopener">
+            <span>
+                <i class="fab fa-github"></i>
+            </span>
+        </a>
+        
+        
+        
+        
+        
+        
+        
+        <a href="https://www.linkedin.com/in/ntthang-dev/" class="footer__social__link" alt="linkedin" target="_blank" aria-label="https://www.linkedin.com/in/ntthang-dev/" rel="noopener">
+            <span>
+                <i class="fab fa-linkedin"></i>
+            </span>
+        </a>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <a href="https://twitter.com/ntthang_dev" class="footer__social__link" alt="twitter" target="_blank" aria-label="https://twitter.com/ntthang_dev" rel="noopener">
+            <span>
+                <i class="fab fa-twitter"></i>
+            </span>
+        </a>
+        
+        
+        
+        
+        
+        <a href="https://www.youtube.com/channel/UCpZ5f43HrkqSMrPlF3Esxcg" class="footer__social__link" alt="youtube" target="_blank" aria-label="https://www.youtube.com/channel/UCpZ5f43HrkqSMrPlF3Esxcg" rel="noopener">
+            <span>
+                <i class="fab fa-youtube"></i>
+            </span>
+        </a>
+        
+        
+    </div>
+    
+    
+
+    <address class="footer__contact">
+        
+        <p class="footer__contact__item">
+            <span><i class="far fa-envelope"></i></span>
+            <a href="mailto:ntthang.dev@gmail.com" class="footer__contact__link" alt="Email">
+                ntthang.dev@gmail.com
+            </a>
+        </p>
+        
+
+        
+
+        
+
+        
+        <p class="footer__contact__item">
+            <span><i class="fas fa-map-marker-alt"></i></span>
+            Ho Chi Minh, Viet Nam
+        </p>
+        
+    </address>
+
+    <div class="copy">
+        
+        <p>© 2021 Jackie Nguyen</p>
+        
+    </div>
+
+    
+
+
+
+
+<script src="/js/bundle.min.58209fc971cd5bd08cd889189ae476bf3c16736fd03234aeb7580bc6c504f5adc6797c906cb341a98099719e32801c5d3d1d3abd1ecded9433aedc2d34c7bc8d.js"></script>
+
+
+
+
+
+
+
+
+
+
+<script
+	defer
+	src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"
+    integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5&#43;&#43;eIfzYmTgBBmXYdhvxPc&#43;XcFEk&#43;zJwDgWbP"
+	crossorigin="anonymous"
+></script>
+
+
+</footer></body>
+
+</html>

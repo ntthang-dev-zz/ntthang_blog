@@ -1,0 +1,124 @@
+baseurl = "https://brave-sea-010d4d700.azurestaticapps.net"
+title = "Jackie Nguyen"
+author = "ntthang_dev"
+googleAnalytics = ""
+defaultContentLanguage = "en"
+paginate = 3
+
+theme = "hugo-terrassa-theme"
+#themesDir = "../.." # Not necessary on production sites
+
+[params]
+    description = "Develop for future."
+    favicon = "favicon.ico"
+    logo = ""
+
+[params.hero]
+    textColor = "" # Empty for default color
+
+[params.cta] # Call To Action
+    show = true
+    cta = "Contact"
+    link = "contact" # Relative URL
+
+[params.separator] # Separators between sections on the home page
+    show = false
+
+[params.fa] # Font Awesome options
+    version = "5.7.2"
+    integrity = "sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP"
+
+[params.form] # Contact form
+    netlify = true
+    action = "https://formspree.io/your@email.com"
+    method = "POST"
+    inputNameName = "name"
+    inputNameLabel = "Name"
+    inputNamePlaceholder = "Your name"
+    inputEmailName = "email"
+    inputEmailLabel = "Email"
+    inputEmailPlaceholder = "Your email"
+    inputMsgName = "message"
+    inputMsgLabel = "Write something"
+    inputMsgLength = 750
+    inputSubmitValue = "Send"
+
+[params.posts]
+    showAuthor = true
+    showDate = true
+    showTags = true
+    dateFormat = "Monday, Jan, 2006"
+
+[params.contact] # Contact info
+    email = "ntthang.dev@gmail.com"
+    phone = ""
+    skype = ""
+    address = "Ho Chi Minh, Viet Nam"
+
+[params.social]
+    twitter = "https://twitter.com/ntthang_dev"
+    facebook = ""
+    github = "https://github.com/ntthang-dev"
+    gitlab = ""
+    codepen = ""
+    instagram = ""
+    pinterest = ""
+    youtube = "https://www.youtube.com/channel/UCpZ5f43HrkqSMrPlF3Esxcg"
+    linkedin = "https://www.linkedin.com/in/ntthang-dev/"
+    weibo = ""
+    mastodon = ""
+    tumblr = ""
+    flickr = ""
+    "500px" = ""
+
+[params.copy] # Copyright
+    copy = "© 2021 Jackie Nguyen" # Empty for default content
+
+[privacy]
+    [privacy.googleAnalytics]
+        anonymizeIP = true
+        disable = false
+        respectDoNotTrack = true
+        useSessionStorage = false
+    [privacy.instagram]
+        disable = false
+        simple = false
+    [privacy.twitter]
+        disable = false
+        enableDNT = true
+        simple = false
+    [privacy.vimeo]
+        disable = false
+        simple = false
+    [privacy.youtube]
+        disable = false
+        privacyEnhanced = true
+
+[params.languageSwitcher]
+    show = true
+
+[languages]
+    [languages.en]
+        languageName = "en"
+        weight = 1
+        contentDir = "content/en"
+      # Vietnammese  
+      [languages.vi]
+        languageName = "vi"
+        weight = 2
+        contentDir = "content/vi"
+        title = "Jackie Nguyen"
+        description = "Anh sẽ biến cái phần mềm đó thành phần cứng vì em."
+        [languages.vi.params]
+          # Form vietnammese             
+          [languages.vi.params.form] # Translate contact form fields
+            inputNameLabel = "Tên" 
+            inputNamePlaceholder = "Tên của bạn"
+            inputEmailLabel = "E-mail"
+            inputEmailPlaceholder = "Địa chỉ E-Mail của bạn"
+            inputMsgLabel = "Bạn muốn nhắn gửi điều gì"
+            inputSubmitValue = "Gửi"
+            [languages.vi.params.cta] # Translate Call To Action
+                show = true
+                cta = "Liên hệ"
+                link = "vi/lien-he/" # Relative URL

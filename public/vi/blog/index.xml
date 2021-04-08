@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blog on Jackie Nguyen</title>
+    <link>/vi/blog/</link>
+    <description>Recent content in Blog on Jackie Nguyen</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 18 Feb 2018 22:34:04 +0100</lastBuildDate><atom:link href="/vi/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Compiler là gì ?</title>
+      <link>/vi/posts/makefile-tutorial/compiler/</link>
+      <pubDate>Sun, 18 Feb 2018 22:34:04 +0100</pubDate>
+      
+      <guid>/vi/posts/makefile-tutorial/compiler/</guid>
+      <description>Compiler là gì ? Cross Compiler là gì ? Nó có liên quan gì tới một hệ thống nhúng ? Mình cùng tìm hiểu một số khái niệm cơ bản trong bài này nhé.
+Compiler Compiler hay còn gọi là trình biên dịch có thể được hiểu là công việc dịch chuỗi câu lệnh được viết từ một ngôn ngữ lập trình thành chương trình tương đương dưới dạng ngôn ngữ máy tính, thường là ngôn ngữ ở cấp thấp hơn, ngôn ngữ máy.</description>
+    </item>
+    
+  </channel>
+</rss>

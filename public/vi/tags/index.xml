@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Jackie Nguyen</title>
+    <link>/vi/tags/</link>
+    <description>Recent content in Tags on Jackie Nguyen</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 18 Feb 2018 22:34:04 +0100</lastBuildDate><atom:link href="/vi/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>compiler</title>
+      <link>/vi/tags/compiler/</link>
+      <pubDate>Sun, 18 Feb 2018 22:34:04 +0100</pubDate>
+      
+      <guid>/vi/tags/compiler/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>makefile</title>
+      <link>/vi/tags/makefile/</link>
+      <pubDate>Sun, 18 Feb 2018 22:34:04 +0100</pubDate>
+      
+      <guid>/vi/tags/makefile/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
